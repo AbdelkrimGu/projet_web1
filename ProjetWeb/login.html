@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projet</title>
+</head>
+
+<body>
+    <div>
+        <div id="signup" style="display:none">
+            <form action="">
+                <h2>Sign Up</h2>
+
+                <div>
+                    <label class="labels" for="nom">First name</label>
+                    <input class="inputs" id="nom" type="text" autocomplete="off" placeholder="First name">
+                </div>
+
+                <div id="a">
+                    <label class="labels" id="pre" for="prenom">Last name</label>
+                    <input class="inputs" id="prenom" type="text" autocomplete="off" placeholder="Last name">
+
+                </div>
+
+                <div>
+                    <label class="labels" for="adresse">Address email</label>
+                    <input class="inputs" id="adresse" type="email"  autocomplete="off" placeholder="Address email">
+                </div>
+
+                <div>
+                    <label class="labels" for="password">Password</label>
+                    <input class="inputs" id="password" type="password" placeholder="Password">
+                </div>
+
+                <div>
+                    <label class="labels" for="password1">Confirm password</label>
+                    <input class="inputs" id="password1" type="password" placeholder="Confirm password">
+                </div>
+
+                <div>
+                    <label class="labels" for="date">Date of birth</label>
+                    <input class="inputs" id="date" type="date">
+                </div>
+
+                <button id="submit" type="submit">Submit</button>
+
+                <a onClick='login()'>vous avez deja un compte ?</a>
+            </form>
+        </div>
+
+        <div id="login">
+            <form action="">
+                <h2>Login</h2>
+                <div>
+                    <label class="labels" for="adresse_log">Address email</label>
+                    <input class="inputs" id="adresse_log" type="mail" placeholder="address email">
+
+                </div>
+                <div>
+                    <label class="labels" for="password_log">Password</label>
+                    <input class="inputs" id="password_log" type="password" placeholder="password">
+
+                </div>
+
+                <button id="submit" type="submit">Continue</button>
+
+                <a onClick='create_acc()'>vous n'avez pas un compte? inscrivez-vous</a>
+
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
