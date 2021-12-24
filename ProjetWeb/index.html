@@ -11,7 +11,8 @@
 
 <body>
     <header>
-        <div id="about"><div></div>
+        <div id="about">
+            <div></div>
             <img src="LOGOO.png" alt="LogoHere">
             <ul>
                 <li><a href="#">About</a></li>
@@ -29,7 +30,7 @@
     <aside class="sidebar">
         <div></div>
         <a class=" btn" href="#"><img class="icons" src="ressource\hospital-sign.png"> Medecine</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\computer-screen.png">Informatique</a>
+        <a class=" btn active" href="#"><img class="icons" src="ressource\computer-screen.png">Informatique</a>
         <a class=" btn" href="#"><img class="icons" src="ressource\flask.png">Biologie</a>
         <a class=" btn" href="#"><img class="icons" src="ressource\caduceus.png">Pharmacie</a>
         <a class=" btn" href="#"><img class="icons" src="ressource\blueprint.png">Architecture</a>
@@ -37,17 +38,97 @@
     </aside>
 
     <section>
-        
-            <form  action="">
-                <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
-                <button type="submit"><svg viewBox="0 0 1024 1024">
-                        <path class="path1"
-                            d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
-                        </path>
-                    </svg></button>
-            </form>
-        
+        <form action="">
+            <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
+            <button type="submit"><svg viewBox="0 0 1024 1024">
+                    <path class="path1"
+                        d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z">
+                    </path>
+                </svg></button>
+        </form>
+        <div>
 
+            <ul class="cards">
+                <li>
+                    <a href="" class="card">
+
+                        <img src="ressource\medecine.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" src="ressource\hospital-sign.png" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">Medecine</h3>
+                                    <span class="card__status">5 quiz</span>
+
+                                </div>
+                            </div>
+                            <button class="card_btn">Commencer</button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="card">
+                        <img src="ressource\medecine.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" src="ressource\computer-screen.png" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">Informatique</h3>
+                                    <span class="card__status">4 quiz</span>
+
+                                </div>
+                            </div>
+                            <button class="card_btn">Commencer</button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="card">
+                        <img src="ressource\bio.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" src="ressource\flask.png" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">Biologie</h3>
+                                    <span class="card__status">2 quiz</span>
+
+                                </div>
+                            </div>
+                            <button class="card_btn">Commencer</button>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="card">
+                        <img src="ressource\bio.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" src="ressource\caduceus.png" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">Pharmacie</h3>
+                                    <span class="card__status">1 quiz</span>
+                                </div>
+                            </div>
+                            <button class="card_btn">Commencer</button>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
 
 
     </section>
@@ -60,4 +141,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
