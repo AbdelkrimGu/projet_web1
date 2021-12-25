@@ -6,36 +6,69 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-color:rgb(248, 247, 247);
+  box-sizing: border-box;
+  background-color: rgb(248, 247, 247);
 }
 
 header {
-  background-color: darkslategray;
-  width: 100%;
+  margin: 0;
+  background-color: #2f777a;
+  /* background: linear-gradient(to right,#2f777a, #599496 ); */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 80px;
-  top: 0px;
-  position: fixed;
+  position: sticky;
+  top: 0;
+  width: 100%;
   z-index: 10;
 }
-header img {
-  width: 15%;
-  height: 10%;
-  float: left;
+
+#about {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#about img {
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  max-height: 70px;
+  margin-left: 1rem;
 }
 
 #about ul {
-  float: left;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1.5rem;
+  margin-left: 1em;
+  align-items: center;
+}
+#about > button {
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: none;
+  opacity:0;
+  transition:opacity 0.2s linear;
+}
+
+header ul li {
+  padding: 0 7px;
   list-style-type: none;
-  margin: 3% 0;
   cursor: pointer;
 }
-/* #subscription{
-    float:right;
-} */
+
 #subscription ul {
-  float: right;
-  list-style-type: none;
-  cursor: pointer;
+  margin-right: 3rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1.5rem;
+  align-items: center;
 }
 
 a {
@@ -43,36 +76,22 @@ a {
   color: white;
 }
 
-header div > ul > li {
-  position: inherit;
-  margin-right: 10px;
-  padding: 8px;
-  color: white;
-  text-decoration: solid;
-  display: inline-block;
-}
-header div > ul > form {
-  position: inherit;
-  margin-right: 10px;
-  padding: 8px;
-  color: white;
-  text-decoration: solid;
-  display: inline-block;
-}
-
 aside {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 30%;
+  max-width: 200px;
   background-color: #d8dad9;
   position: fixed;
   height: 100%;
   top: 80px;
   overflow: auto;
+  transition: margin 0.5s;
 }
 
 aside a {
-  display: block;
+  display: flex;
+  align-items: center;
   color: black;
   padding: 16px;
   text-decoration: none;
@@ -90,7 +109,7 @@ aside a:hover:not(.active) {
 }
 
 aside > div {
-  height: 50px;
+  height: 80px;
 }
 
 .icons {
@@ -100,8 +119,8 @@ aside > div {
   margin: 0 10px 0 0;
 }
 section {
-  
-   margin: 80px 0px 0px 200px;
+  transition: margin-left 0.5s;
+  margin: 50px 0px 0px 200px;
 }
 
 .inputs {
@@ -113,7 +132,6 @@ section {
   padding: 6px 10px;
 }
 
-
 form > button {
   all: unset;
   cursor: pointer;
@@ -121,7 +139,7 @@ form > button {
   height: 44px;
 }
 svg {
-  color: cadetblue;
+  color: #2f777a;
   fill: currentColor;
   width: 24px;
   height: 24px;
@@ -129,21 +147,21 @@ svg {
 }
 
 form {
-  border: 2px solid lightgray;
-  width: 400px;
+  border: 2px solid #2f777a;
+  width: 50%;
+  max-width: 400px;
   height: 40px;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
-input:focus form{
-    border-color: cadetblue;
+input:focus form {
+  border-color: cadetblue;
 }
-
 
 .cards {
   display: grid;
@@ -157,13 +175,13 @@ input:focus form{
 .card {
   position: relative;
   display: block;
-  height: 260px;  
+  height: 260px;
   border-radius: 40px;
   overflow: hidden;
   text-decoration: none;
 }
 
-.card__image {      
+.card__image {
   width: 100%;
   height: auto;
 }
@@ -173,11 +191,11 @@ input:focus form{
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 1;      
-  border-radius:40px;    
-  background-color: cadetblue;      
+  z-index: 1;
+  border-radius: 40px;
+  background-color: #2f777a;
   transform: translateY(100%);
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .card:hover .card__overlay {
@@ -190,10 +208,10 @@ input:focus form{
   align-items: center;
   gap: 2em;
   padding: 1.5em;
-  border-radius: 40px 0 0 0;    
+  border-radius: 40px 0 0 0;
   background-color: #fff;
   transform: translateY(-100%);
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .card__arc {
@@ -201,7 +219,7 @@ input:focus form{
   height: 80px;
   position: absolute;
   bottom: 100%;
-  right: 0;      
+  right: 0;
   z-index: 1;
   padding: 0;
 }
@@ -209,7 +227,7 @@ input:focus form{
 .card__arc path {
   fill: #fff;
   d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}       
+}
 
 .card:hover .card__header {
   transform: translateY(0);
@@ -218,36 +236,48 @@ input:focus form{
 .card__thumb {
   flex-shrink: 0;
   width: 35px;
-  height: 35px;      
-      
+  height: 35px;
 }
 
 .card__title {
   font-size: 1em;
-  margin: 0 0 .3em;
-  color: #6A515E;
+  margin: 0 0 0.3em;
+  color: #6a515e;
 }
 
 .card__status {
-  font-size: .8em;
-  color: #D7BDCA;
+  font-size: 0.8em;
+  color: #d7bdca;
 }
 
 .card__description {
   padding: 0 2em 2em;
   margin: 0;
   overflow: hidden;
-}    
+}
 
-.card_btn{
-    background-color: transparent;
-    height: auto;
-    padding: 5px 10px 5px 10px;
-    color: white;
-    border: none;
-    display: grid;
-    margin: auto;
-    font-size:18px;
-    margin-bottom: 10px;
-    cursor: pointer;
+.card_btn {
+  background-color: transparent;
+  height: auto;
+  color: white;
+  border: none;
+  display: grid;
+  margin: auto;
+  font-size: 18px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.closebtn {
+  position: relative;
+  top: 0;
+  color: gray;
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  float: right;
+}
+.closebtn:hover {
+  color: #2f777a;
 }
