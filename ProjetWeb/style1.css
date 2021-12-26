@@ -303,6 +303,7 @@ input:focus form {
   /* drop down  */
    .dropdown {
     display: block !important;
+    margin-right: 2%;
     /* float: left;
     overflow: hidden;
     width: 25%; */
