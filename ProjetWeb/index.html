@@ -16,17 +16,28 @@
         <div id="about">
             <button id="burger" onclick="openNav()">&#9776;</button>
             <img src="ressource\logo.png" alt="LogoHere">
-            <ul>
+            <ul class="list">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
 
         <div id="subscription">
-            <ul>
+            <ul class="list">
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
+        </div>
+        <div class="dropdown" >
+            <button  class="dropbtn" onclick="myFunction()">Account
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Log In</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
         </div>
     </header>
     <aside id="sidebar" class="sidebar">

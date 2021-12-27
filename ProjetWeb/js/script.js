@@ -37,4 +37,20 @@ function closeNav() {
     document.getElementById("main").style.marginLeft = "0";
     document.getElementById("burger").style.opacity = "1";
     document.getElementById("burger").style.visibility = "visible";
+<<<<<<< HEAD
 }
+=======
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  }
+>>>>>>> e0fc55adcb00fba2c652ee0a3560eb5577d887c8
