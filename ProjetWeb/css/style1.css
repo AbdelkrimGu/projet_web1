@@ -187,6 +187,8 @@ input:focus form {
 .card__image {
   width: 100%;
   height: auto;
+  -webkit-filter: blur(1px); 
+  filter: blur(1px);
 }
 
 .card__overlay {
