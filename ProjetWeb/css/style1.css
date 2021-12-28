@@ -55,7 +55,7 @@ header {
   color: white;
   background-color: transparent;
   border: none;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.2s linear;
 }
 
@@ -91,6 +91,12 @@ aside {
   overflow: auto;
   transition: margin 0.5s;
 }
+
+.show-sidebar{
+  position: absolute;
+  /* float: center; */
+  display: none !important;
+} 
 
 aside a {
   display: flex;
@@ -300,6 +306,34 @@ input:focus form {
     margin-left: 10%;
     /* margin-right: -30%; */
   }
+
+  aside{
+    /* display: contents;
+    position: sticky; */
+    max-width: 100%;
+    width: 100% !important;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  aside a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #main{
+    margin: auto;
+    margin-top: 127px;
+    
+  }
+  /* aside a > *{
+    margin-left: 30%;
+  } */
+  /* aside a > img{
+    margin-left: 20%;
+  } */
   /* drop down  */
    .dropdown {
     display: block !important;

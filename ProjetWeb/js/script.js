@@ -50,3 +50,12 @@ function myFunction() {
       }
     }
   }
+
+
+
+  var menu = document.getElementById("burger");
+  var sidebar = document.getElementById("sidebar");
+
+  menu.addEventListener('click' , function(){
+      sidebar.classList.toggle("show-sidebar");
+  });
