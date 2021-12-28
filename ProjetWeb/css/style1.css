@@ -89,7 +89,7 @@ aside {
   height: 100%;
   top: 80px;
   overflow: auto;
-  transition: margin 0.5s;
+  transition: width 0.5s;
 }
 
 .show-sidebar{
@@ -193,6 +193,8 @@ input:focus form {
 .card__image {
   width: 100%;
   height: auto;
+  -webkit-filter: blur(1px); 
+  filter: blur(1px);
 }
 
 .card__overlay {
@@ -278,33 +280,18 @@ input:focus form {
   cursor: pointer;
 }
 
-.closebtn {
-  position: relative;
-  top: 0;
-  color: gray;
-  font-size: 30px;
-  background-color: transparent;
-  border: none;
-  float: right;
-}
-.closebtn:hover {
-  color: #2f777a;
-}
-
 @media (max-width: 625px) {
   .list {
     display: none !important;
   }
-  #about{
+  #about {
     width: 66.7% !important;
-    display: grid;    
+    display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 7%;
-    
   }
-  #about img{
+  #about img {
     margin-left: 10%;
-    /* margin-right: -30%; */
   }
 
   aside{
@@ -335,14 +322,14 @@ input:focus form {
     margin-left: 20%;
   } */
   /* drop down  */
-   .dropdown {
+  .dropdown {
     display: block !important;
     margin-right: 2%;
     /* float: left;
     overflow: hidden;
     width: 25%; */
   }
-  
+
   .dropdown .dropbtn {
     cursor: pointer;
     font-size: 16px;
@@ -380,11 +367,10 @@ input:focus form {
 
   .dropdown-content a:hover {
     background-color: rgb(8, 139, 139);
-  } 
+  }
 
   .show {
     display: block;
-    
   }
   /* end  */
 }
