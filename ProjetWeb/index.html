@@ -5,32 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+
+    <link rel="stylesheet" href="\ProjetWeb\css\style1.css">
+
     <title>Quiz</title>
 </head>
 
 <body>
     <header>
         <div id="about">
-            <button id="burger" onclick="openNav()">&#9776;</button>
+            <button id="burger">&#9776;</button>
             <img src="ressource\logo.png" alt="LogoHere">
-            <ul>
+            <ul class="list">
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
 
         <div id="subscription">
-            <ul>
+            <ul class="list">
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
+        <div class="dropdown" >
+            <button  class="dropbtn" onclick="myFunction()">Account
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Log In</a>
+                <a href="#">Sign Up</a>
+                <a href="#">Contact</a>
+                <a href="#">About</a>
+            </div>
+        </div>
     </header>
     <aside id="sidebar" class="sidebar">
-        <button class="closebtn" onclick="closeNav()">&times;</button>
         <div></div>
-        
+
         <a class=" btn  active" href="#"><img class="icons" src="ressource\home.png">Accueil</a>
         <a class=" btn" href="#"><img class="icons" src="ressource\hospital-sign.png">Medecine</a>
         <a class=" btn" href="#"><img class="icons" src="ressource\computer-screen.png">Informatique</a>
@@ -49,9 +61,8 @@
                     </path>
                 </svg></button>
         </form>
-       
-        <div>
 
+        <div>
             <ul class="cards">
                 <li>
                     <a href="" class="card">
@@ -75,7 +86,7 @@
                 </li>
                 <li>
                     <a href="" class="card">
-                        <img src="ressource\medecine.jpg" class="card__image" alt="" />
+                        <img src="ressource/working-code.jpg" class="card__image" alt="" />
                         <div class="card__overlay">
                             <div class="card__header">
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +124,7 @@
                 </li>
                 <li>
                     <a href="" class="card">
-                        <img src="ressource\bio.jpg" class="card__image" alt="" />
+                        <img src="ressource\pharmacie.jpg" class="card__image" alt="" />
                         <div class="card__overlay">
                             <div class="card__header">
                                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -129,35 +140,32 @@
                         </div>
                     </a>
                 </li>
+                <li>
+                    <a href="" class="card">
+                        <img src="ressource\architecture.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                    <path />
+                                </svg>
+                                <img class="card__thumb" src="ressource\caduceus.png" alt="" />
+                                <div class="card__header-text">
+                                    <h3 class="card__title">Architecture</h3>
+                                    <span class="card__status">1 quiz</span>
+                                </div>
+                            </div>
+                            <button class="card_btn">Commencer</button>
+                        </div>
+                    </a>
+                </li>
 
             </ul>
 
         </div>
-
-
     </section>
 
 
-
-
-    <script>
-        function openNav() {
-          document.getElementById("sidebar").style.width = "200px";
-          document.getElementById("main").style.marginLeft = "200px";
-          document.getElementById("burger").style.opacity = "0";
-          document.getElementById("burger").style.visibility = "hidden";
-        }
-        
-        function closeNav() {
-          document.getElementById("sidebar").style.width = "0";
-          document.getElementById("main").style.marginLeft= "0";
-          document.getElementById("burger").style.opacity = "1";
-          document.getElementById("burger").style.visibility = "visible";
-        }
-        </script>
-
-
-    <script src="script.js"></script>
+    <script src="\ProjetWeb\js\script.js"></script>
 </body>
 
 </html>
