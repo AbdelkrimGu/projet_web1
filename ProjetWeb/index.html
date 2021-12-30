@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="\ProjetWeb\css\style1.css">
+    <script src="https://kit.fontawesome.com/c3e887da68.js" crossorigin="anonymous"></script>
 
     <title>Quiz</title>
 </head>
@@ -14,8 +14,7 @@
 <body>
     <header>
         <div id="about">
-            <!-- <button id="burger" onclick="openNav()">&#9776;</button> -->
-            <button id="burger" >&#9776;</button>
+            <button id="burger">&#9776;</button>
             <img src="ressource\logo.png" alt="LogoHere">
             <ul class="list">
                 <li><a href="#">About</a></li>
@@ -23,14 +22,15 @@
             </ul>
         </div>
 
+
         <div id="subscription">
             <ul class="list">
                 <li><a href="#">Log In</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
         </div>
-        <div class="dropdown" >
-            <button  class="dropbtn" onclick="myFunction()">Account
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">Account
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="myDropdown">
@@ -42,19 +42,27 @@
         </div>
     </header>
     <aside id="sidebar" class="sidebar">
-        <!-- <button class="closebtn" onclick="closeNav()">&times;</button> -->
         <div></div>
 
-        <a class=" btn  active" href="#"><img class="icons" src="ressource\home.png">Accueil</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\hospital-sign.png">Medecine</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\computer-screen.png">Informatique</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\flask.png">Biologie</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\caduceus.png">Pharmacie</a>
-        <a class=" btn" href="#"><img class="icons" src="ressource\blueprint.png">Architecture</a>
+        <a class=" btn  active" href="#" onclick="ret('accueil')"><i class="fas fa-home icons"></i>Accueil</a>
+        <a class=" btn" href="#" onclick="ret('medecine')"><i class="fas fa-book-medical icons"></i>Medecine</a>
+        <a class=" btn" href="#" onclick="ret('informatique')"><i class="fas fa-code icons"></i>Informatique</a>
+        <a class=" btn" href="#" onclick="ret('biologie')"><i class="fas fa-vial icons"></i>Biologie</a>
+        <a class=" btn" href="#" onclick="ret('pharmacie')"><i class="fas fa-pills icons"></i>Pharmacie</a>
+        <a class=" btn" href="#" onclick="ret('architecture')"><i
+                class="fas fa-ruler-combined icons"></i>Architecture</a>
 
+        <div class=dark_mode_button>
+            <label class="switch">
+                <input id="darkm" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <label class="dark_text">Dark mode</label>
+        </div>
     </aside>
 
     <section id="main">
+
         <form action="">
             <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
             <button type="submit"><svg viewBox="0 0 1024 1024">
@@ -64,109 +72,431 @@
                 </svg></button>
         </form>
 
-        <div>
-            <ul class="cards">
-                <li>
-                    <a href="" class="card">
 
-                        <img src="ressource\medecine.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-                                <img class="card__thumb" src="ressource\hospital-sign.png" alt="" />
-                                <div class="card__header-text">
-                                    <h3 class="card__title">Medecine</h3>
-                                    <span class="card__status">5 quiz</span>
+        <div id="accueil">
+            <div>
+                <ul class="cards">
+                    <li>
+                        <a class="card" onclick="ret('medecine')">
+                            <img src="ressource\medecine.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fas fa-book-medical icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Medecine</h3>
+                                        <span class="card__status">5 quiz</span>
 
+                                    </div>
                                 </div>
+                                <button class="card_btn">Commencer</button>
                             </div>
-                            <button class="card_btn">Commencer</button>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="card">
-                        <img src="ressource/working-code.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-                                <img class="card__thumb" src="ressource\computer-screen.png" alt="" />
-                                <div class="card__header-text">
-                                    <h3 class="card__title">Informatique</h3>
-                                    <span class="card__status">4 quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card" onclick="ret('informatique')">
+                            <img src="ressource/working-code.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fas fa-code icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Informatique</h3>
+                                        <span class="card__status">4 quiz</span>
 
+                                    </div>
                                 </div>
+                                <button class="card_btn">Commencer</button>
                             </div>
-                            <button class="card_btn">Commencer</button>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="card">
-                        <img src="ressource\bio.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-                                <img class="card__thumb" src="ressource\flask.png" alt="" />
-                                <div class="card__header-text">
-                                    <h3 class="card__title">Biologie</h3>
-                                    <span class="card__status">2 quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card" onclick="ret('biologie')">
+                            <img src="ressource\bio.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fas fa-vial icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Biologie</h3>
+                                        <span class="card__status">2 quiz</span>
 
+                                    </div>
                                 </div>
+                                <button class="card_btn">Commencer</button>
                             </div>
-                            <button class="card_btn">Commencer</button>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="card">
-                        <img src="ressource\pharmacie.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-                                <img class="card__thumb" src="ressource\caduceus.png" alt="" />
-                                <div class="card__header-text">
-                                    <h3 class="card__title">Pharmacie</h3>
-                                    <span class="card__status">1 quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card" onclick="ret('pharmacie')">
+                            <img src="ressource\pharmacie.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fas fa-pills icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Pharmacie</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
                                 </div>
+                                <button class="card_btn">Commencer</button>
                             </div>
-                            <button class="card_btn">Commencer</button>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="" class="card">
-                        <img src="ressource\architecture.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                            <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
-                                </svg>
-                                <img class="card__thumb" src="ressource\caduceus.png" alt="" />
-                                <div class="card__header-text">
-                                    <h3 class="card__title">Architecture</h3>
-                                    <span class="card__status">1 quiz</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="card" onclick="ret('architecture')">
+                            <img src="ressource\architecture.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fas fa-ruler-combined icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Architecture</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
                                 </div>
+                                <button class="card_btn">Commencer</button>
                             </div>
-                            <button class="card_btn">Commencer</button>
-                        </div>
-                    </a>
-                </li>
+                        </a>
+                    </li>
 
-            </ul>
+                </ul>
+
+            </div>
 
         </div>
+        <div id="medecine" style="display: none;">
+            <div>
+                <ul class="cards">
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\cardio.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-heart-pulse icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Cardiologie</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\neuro.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-brain icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Neurologie</h3>
+                                        <span class="card__status">4 quiz</span>
 
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\pneumo.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-lungs icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Pneumologie</h3>
+                                        <span class="card__status">2 quiz</span>
 
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\infectieux.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-virus icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Infectieux</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\ophtalmo.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-eye icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Ophtalmologie</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\medecine\radio.png" class="card__image_med" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+
+                                    <i class="fa-solid fa-x-ray icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Radiologie</h3>
+                                        <span class="card__status">5 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div id="informatique" style="display: none;">
+            <div>
+                <ul class="cards">
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\informatique\data.PNG" class="card__image_inf" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+
+                                    <i class="fa-solid fa-database icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Base de données</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\informatique\dev_web.PNG" class="card__image_inf" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-code icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Developement web</h3>
+                                        <span class="card__status">2 quiz</span>
+
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\informatique\reseau.PNG" class="card__image_inf" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-sitemap icons_card"></i>
+
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Reseaux</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                   
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\informatique\archi.PNG" class="card__image_inf" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-microchip icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Architecture</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="ressource\informatique\terminal.PNG" class="card__image_inf" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-terminal icons_card"></i>
+
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Systeme d'exp</h3>
+                                        <span class="card__status">4 quiz</span>
+
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        <div id="biologie" style="display: none;">
+            <div>
+                <ul class="cards">
+                    <li>
+                        <a href="" class="card">
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+
+                                    <i class="fa-solid fa-database icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Biologie moléculaire</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-sitemap icons_card"></i>
+
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Ecologie</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-code icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Biochemie structurale</h3>
+                                        <span class="card__status">2 quiz</span>
+
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-microchip icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Biophysique</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
     </section>
+
+
+    <script>
+        function ret(e) {
+            var all_div = document.querySelectorAll("section > div");
+            for (var i = 0; i < all_div.length; i++) {
+                all_div[i].style.display = "none";
+            }
+            var a = document.getElementById(e)
+            a.style.display = "block"
+
+
+        }
+
+
+    </script>
 
 
     <script src="\ProjetWeb\js\script.js"></script>
