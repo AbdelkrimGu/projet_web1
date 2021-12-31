@@ -33,8 +33,6 @@ body {
 header {
   margin: 0;
   background-color: #064663;
-  /* background: linear-gradient(to right, #296994, #3282b8); */
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,7 +49,7 @@ header {
   align-items: center;
 }
 
-#about img {
+#log img {
   width: 100%;
   max-width: 200px;
   height: 100%;
@@ -80,13 +78,11 @@ header {
 }
 
 header ul li {
-  /* padding: 0 7px; */
   list-style-type: none;
   cursor: pointer;
 }
 
 #subscription ul {
-  margin-right: 3rem;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 1.5rem;
@@ -117,6 +113,10 @@ aside {
   display: none !important;
 }
 
+.show-margin{
+  margin-left: 0px;
+}
+
 
 aside a {
   vertical-align: middle;
@@ -125,6 +125,18 @@ aside a {
   padding: 16px;
   text-decoration: none;
   outline: none;
+}
+
+aside a {
+  vertical-align: middle;
+  display: flex;
+  color: var(--premiere-color);
+  padding: 16px;
+  text-decoration: none;
+  outline: none;
+}
+aside a:last-child{
+  margin: 50px 0 50px 0;
 }
 
 aside a.active {
@@ -139,12 +151,17 @@ aside a:hover:not(.active) {
   background-color: #3282b863;
   color: var(--seconde-color);
 }
+aside a:last-child:hover {
+  background-color: transparent;
+  color: var(--seconde-color);
+}
 
 aside > div {
   height: 50px;
 }
 .dark_text {
   color: var(--premiere-color);
+  padding-left:10px;
 }
 
 .icons {
@@ -155,6 +172,11 @@ aside > div {
   text-align: center;
   margin: 0 10px 0 0;
 }
+.icons_user {
+  display: block !important;
+  font-size: 20px;
+  text-align: center;
+}
 .icons_card {
   vertical-align: middle;
   color: var(--premiere-color);
@@ -162,9 +184,24 @@ aside > div {
   width: 30px;
   text-align: center;
 }
+.icons_retour{
+  font-size: 30px;
+  color: var(--premiere-color);
+  margin-left:2% ;
+
+}
+
 section {
+  
   transition: margin-left 0.5s;
   margin: 150px 0px 0px 200px;
+}
+section p{
+  color: gray;
+  position: relative;
+  text-align: center;
+  top: 100px;
+  
 }
 
 .inputs {
@@ -205,7 +242,7 @@ form {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin: 4rem 5vw;
   padding: 0;
@@ -226,8 +263,6 @@ form {
 .card__image {
   width: 100%;
   height: auto;
-  -webkit-filter: blur(1px);
-  filter: blur(1px);
 }
 .card__image_med {
   width: 100%;
@@ -281,7 +316,7 @@ form {
 
 .card__arc path {
   fill: var(--seconde-color);
-  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  d:path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
 }
 
 .card:hover .card__header {
@@ -328,14 +363,16 @@ form {
   .list {
     display: none !important;
   }
-  #about {
-    width: 66.7% !important;
+  #about { 
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 7%;
+    gap: 15%;
   }
-  #about img {
-    margin-left: 10%;
+  #log{
+    width: 45%;
+  }
+  #subscription {
+    display: none;
   }
 
   aside {
@@ -360,6 +397,8 @@ form {
   .dropdown {
     display: block !important;
     margin-right: 2%;
+    gap: 7%;
+
   }
 
   .dropdown .dropbtn {
@@ -415,19 +454,11 @@ form {
 .switch {
   position: relative;
   display: inline-block;
-
   width: 40px;
   height: 25px;
   bottom: 0;
 }
-.dark_mode_button {
-  text-align: center;
-  height: 50px;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 5em;
-}
+
 .slider {
   position: absolute;
   cursor: pointer;

@@ -49,15 +49,7 @@ var sidebar = document.getElementById("sidebar");
 
 menu.addEventListener('click', function () {
     sidebar.classList.toggle("show-sidebar");
-
-    if (sideb.style.width == "0px") {
-        sideb.style.width = "200px";
-        main.style.marginLeft = "200px";
-    }
-    else {
-        sideb.style.width = "0";
-        main.style.marginLeft = "0px";
-    };
+    main.classList.toggle("show-margin");
 
 });
 
@@ -81,3 +73,13 @@ dark.addEventListener('click', function () {
 })
 
 // end
+
+
+function ret(e) {
+    var all_div = document.querySelectorAll("section > div");
+    for (var i = 0; i < all_div.length; i++) {
+        all_div[i].style.display = "none";
+    }
+    var a = document.getElementById(e)
+    a.style.display = "block"
+}

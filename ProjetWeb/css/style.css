@@ -4,7 +4,7 @@
 html,body {
   margin: 0;
   height: 100%;
-  background: linear-gradient(0deg, #75b9bb, #286063);
+  background: linear-gradient(0deg, #08618a, #064663);
 }
 
 body > div {
@@ -45,7 +45,7 @@ form > h2 {
 
 .inputs:focus {
   outline: none;
-  border: 2px solid cadetblue;
+  border: 2px solid #064663;
 }
 form > button {
   width: 50%;
@@ -54,7 +54,7 @@ form > button {
   display: grid;
   margin: auto;
   font-size: 18px;
-  background-color: cadetblue;
+  background-color: #064663;
   color: white;
   border: 1px solid;
   border-radius: 10px;
@@ -71,7 +71,7 @@ form > a {
 }
 form > a:hover {
   cursor: pointer;
-  color: cadetblue;
+  color: #064663;
   display: block;
   text-align: center;
 }
