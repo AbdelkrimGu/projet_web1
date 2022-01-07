@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="\ProjetWeb\css\style1.css">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c3e887da68.js" crossorigin="anonymous"></script>
 
     <title>Quiz</title>
@@ -18,7 +19,7 @@
 
         </div>
         <div id="log">
-            <img src="ressource\logo.png" alt="LogoHere">
+            <img id="logo_img" src="ressource\logo_blanc.png" alt="LogoHere">
         </div>
         <div id="subscription">
             <ul class="list">
@@ -56,7 +57,7 @@
 
     <section id="main">
 
-        <form action="">
+        <form action="" id="searchform" >
             <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
             <button type="submit"><svg viewBox="0 0 1024 1024">
                     <path class="path1"
@@ -66,7 +67,7 @@
         </form>
 
 
-        <div id="accueil">
+        <div id="accueil" >
             <div>
                 <ul class="cards">
                     <li>
@@ -169,7 +170,7 @@
 
         </div>
         <!-- Specialités -->
-        <div id="medecine" style="display: none;">
+        <div id="medecine" class="display_non">
 
             <div>
                 <a onclick="ret('accueil')">
@@ -293,7 +294,7 @@
             </div>
 
         </div>
-        <div id="informatique" style="display: none;">
+        <div id="informatique" class="display_non">
             <div>
                 <a onclick="ret('accueil')">
                     <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
@@ -400,7 +401,7 @@
             </div>
 
         </div>
-        <div id="biologie" style="display: none;">
+        <div id="biologie" class="display_non">
             <div>
                 <a onclick="ret('accueil')">
                     <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
@@ -488,7 +489,7 @@
             </div>
 
         </div>
-        <div id="pharmacie" style="display: none;">
+        <div id="pharmacie" class="display_non">
             <div>
                 <a onclick="ret('accueil')">
                     <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
@@ -574,7 +575,7 @@
             </div>
 
         </div>
-        <div id="architecture" style="display: none;">
+        <div id="architecture" class="display_non">
             <div>
                 <a onclick="ret('accueil')">
                     <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
@@ -585,14 +586,14 @@
         </div>
         <!-- End -->
 
-        <div id="cardiologie" style="display: none;">
+        <div id="cardiologie" class="display_non">
             <div>
                 <a onclick="ret('medecine')">
                     <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
                 </a>
                 <ul class="cards">
                     <li>
-                        <a href="" class="card" style="background-color:#E65C5C;">
+                        <a onclick="ret('quiz1')"  class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <div class="card__header-text">
@@ -604,10 +605,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="card" style="background-color:#E65C5C;">
+                        <a onclick="ret('quiz1')"class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
-                                    <i class="fa-solid fa-lungs icons_card"></i>
+                                    
                                     <div class="card__header-text">
                                         <h3 class="card__title">Quiz 02</h3>
                                     </div>
@@ -617,10 +618,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" class="card" style="background-color:#E65C5C;">
+                        <a href="" class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
-                                    <i class="fa-solid fa-lungs icons_card"></i>
+                                    
                                     <div class="card__header-text">
                                         <h3 class="card__title">Quiz 03</h3>
                                     </div>
@@ -635,10 +636,41 @@
             </div>
 
         </div>
-    </section>
+
+        <div id="quiz1" class="display_non">
+            <a onclick="ret('cardiologie')">
+                <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+            </a>
+            <div  class="card_quiz ">
+                Qestion n°01 :
+                     <h2>L'angor :</h2>
+                     <div class="choix">
+                         <input type="radio" name="choix" id="q1">
+                         <label for="q1">est synonime de coronarite et d'angine de poitrine</label>
+                     </div>
+                     <div class="choix">
+                         <input type="radio" name="choix" id="q2">
+                         <label for="q2">ne servient qu'à l'effort </label>
+                     </div>
+                     <div class="choix">
+                         <input type="radio" name="choix" id="q3">
+                         <label for="q3">et du à une obstruction des artères coronaires</label>
+                     </div>
+                     <div class="choix">
+                         <input type="radio" name="choix" id="q4">
+                         <label for="q4">est synonime de coronarite et d'angine de poitrine</label>
+                     </div>
+                     
+                     <button class="btn_n suiv">Suivant</button>
+                     <button class="btn_n prec">Precedent</button>
+                
+         </div>
+        </div>
+        
 
 
-    <script src="\ProjetWeb\js\script.js"></script>
+
+        <script src="\ProjetWeb\js\script.js"></script>
 </body>
 
 </html>

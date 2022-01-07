@@ -63,12 +63,14 @@ dark.addEventListener('click', function () {
         bod.setProperty('--side-color', "#064663");
         bod.setProperty('--premiere-color', "#fff");
         bod.setProperty('--seconde-color', "#064663");
+        document.getElementById("logo_img").src="../ProjetWeb/ressource/logo_noir.png";
     }
     else {
         bod.setProperty('--main-color', "rgb(248, 247, 247)");
         bod.setProperty('--side-color', "#ddd");
         bod.setProperty('--premiere-color', "#064663");
         bod.setProperty('--seconde-color', "#fff");
+        document.getElementById("logo_img").src="../ProjetWeb/ressource/logo_blanc.png";
     }
 })
 
@@ -83,3 +85,14 @@ function ret(e) {
     var a = document.getElementById(e)
     a.style.display = "block"
 }
+
+
+// enlever search bar
+var quizz=document.getElementsByClassName("quiz");
+for(var i=0;i<quizz.length;i++) {
+    quizz[i].addEventListener("click",function(){
+        document.getElementById("searchform").style.display="none";
+    })
+}
+
+// end
