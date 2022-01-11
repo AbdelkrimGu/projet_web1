@@ -1,7 +1,7 @@
 :root {
   --main-color: rgb(248, 247, 247);
-  --side-color: #ddd;
-  --premiere-color: #064663;
+  --side-color: #e9edf3;
+  --premiere-color: #202d3f;
   --seconde-color: #fff;
 }
 ::-webkit-scrollbar {
@@ -30,7 +30,7 @@ body {
 
 header {
   margin: 0;
-  background-color: #064663;
+  background-color: #202d3f;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -509,7 +509,7 @@ input:checked + .slider:before {
   background-color: var(--premiere-color);
   padding: 20px;
   border-radius: 20px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .btn_n {
@@ -517,23 +517,23 @@ input:checked + .slider:before {
   margin: 30px 10px 0 0;
   border-radius: 5px;
   padding: 5px 20px;
-  background-color: var(--seconde-color) ;
+  background-color: var(--seconde-color);
   border: 1 px solid var(--seconde-color);
   font-size: 15px;
   text-transform: uppercase;
   color: var(--premiere-color);
   cursor: pointer;
 }
-.btn_n:hover{
-  box-shadow:0 0 20px rgba(10,10,10,.2) 
+.btn_n:hover {
+  box-shadow: 0 0 20px rgba(10, 10, 10, 0.2);
 }
-.suiv{
+.suiv {
   float: right;
 }
-.prec{
+.prec {
   float: left;
 }
-.choix{
+.choix {
   padding: 2px 5px;
   margin-bottom: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -551,16 +551,15 @@ input:checked + .slider:before {
   transition: all 0.3s ease-in-out;
 }
 
-.choix input{
+.choix input {
   margin: 0 4px 0 0;
   line-height: normal;
   size: 12px;
   display: none;
-  
 }
 .choix input + label:before,
-.choix input + label:after{
-  content: '';
+.choix input + label:after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -570,23 +569,21 @@ input:checked + .slider:before {
   color: white;
   font-family: Times;
   border-radius: 50%;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .choix input + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: inset 0 0 0 0.1em #ddd, inset 0 0 0 1em white;
 }
 .choix input + label:hover:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: inset 0 0 0 0.3em white, inset 0 0 0 1em #c6c6c6;
 }
 .choix input:checked + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em #064663;
 }
-
-

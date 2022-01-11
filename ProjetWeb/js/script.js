@@ -60,17 +60,17 @@ dark.addEventListener('click', function () {
     var bod = document.querySelector("body").style;
     if (dark.checked) {
         bod.setProperty('--main-color', "#1B262C");
-        bod.setProperty('--side-color', "#064663");
+        bod.setProperty('--side-color', "#202d3f");
         bod.setProperty('--premiere-color', "#fff");
-        bod.setProperty('--seconde-color', "#064663");
-        document.getElementById("logo_img").src="../ProjetWeb/ressource/logo_noir.png";
+        bod.setProperty('--seconde-color', "#202d3f");
+        document.getElementById("logo_img").src="../ProjetWeb/ressource/lo.png";
     }
     else {
         bod.setProperty('--main-color', "rgb(248, 247, 247)");
-        bod.setProperty('--side-color', "#ddd");
-        bod.setProperty('--premiere-color', "#064663");
+        bod.setProperty('--side-color', "#E9EDF3");
+        bod.setProperty('--premiere-color', "#202d3f");
         bod.setProperty('--seconde-color', "#fff");
-        document.getElementById("logo_img").src="../ProjetWeb/ressource/logo_blanc.png";
+        document.getElementById("logo_img").src="../ProjetWeb/ressource/lo.png";
     }
 })
 

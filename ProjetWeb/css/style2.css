@@ -1,0 +1,171 @@
+:root {
+  --main-color: #202d3f;
+  --premiere-color: #064663;
+  --seconde-color: #fff;
+
+}
+* {
+  font-family: "Heebo";
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  width: auto;
+  height: auto;
+  background-color: var(--main-color);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* background: linear-gradient(0deg, #08618a, #064663); */
+}
+header {
+  margin: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.nav-active {
+  background-color: #fff;
+  box-shadow: 5px -1px 12px -5px grey;
+}
+.nav-active-dark {
+  background-color: #202d3f;
+  box-shadow: 5px -1px 12px -5px black;
+}
+
+header div {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header div a {
+  font-size: 18px;
+  width: 33%;
+  font-weight: 300;
+  text-decoration: none;
+  color: var(--seconde-color);
+  transition: all 0.3s ease-in-out;
+}
+header label {
+  font-size: 22px;
+  font-weight: 600;
+  width: 33%;
+  text-decoration: none;
+  color: var(--seconde-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn {
+  margin-right: 5%;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: center;
+  text-transform: uppercase;
+  background-color: var(--seconde-color);
+  color: var(--premiere-color) !important;
+  cursor: pointer;
+  height: 40px;
+}
+
+main > div:first-child {
+  position: relative;
+  margin-top: 120px;
+  padding: 88px;
+  text-align: left;
+  color: #6b7a90;
+}
+main > div h1 {
+  color: var(--seconde-color);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  right: -100%;
+  width: 150%;
+  height: 150%;
+  animation-name: example;
+  animation-duration: 4s;
+  background-repeat: no-repeat;
+  background-image: url(https://preview.cruip.com/solid/dist/images/hero-back-illustration.svg);
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 50%;
+  }
+}
+
+footer {
+    margin-top:400px;
+    bottom:0;
+    position: relative;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #344258;
+    color: #6b7a90;
+    border-top: 1px solid lightgray;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer>div>i{ 
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+
+.card_avantages {
+  width: 540px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  top: 100px;
+  color: #8595ae;
+  text-align: left;
+  margin-bottom: 70px;
+}
+
+.icon {
+  text-align: left;
+  display: block;
+  font-size:25px;
+  margin-right: 25px;
+  margin-bottom: 0;
+}
+.icon + div > h2 {
+  display: block;
+  color: var(--seconde-color);
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-weight: 600;
+}
+.icon + div > h3::after {
+    content: '';
+    left:0px;
+    width: 18px;
+    height: 2px;
+    position: absolute;
+    bottom: -14px;
+    left: calc(50% - 16px);
+    background: #E9EDF3;
+}
