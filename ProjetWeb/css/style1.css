@@ -41,6 +41,10 @@ header {
   z-index: 10;
 }
 
+fieldset{
+
+  border: none;
+}
 #about {
   position: relative;
   display: flex;

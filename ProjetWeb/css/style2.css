@@ -85,6 +85,21 @@ main > div:first-child {
 main > div h1 {
   color: var(--seconde-color);
 }
+.a1 {
+  position:absolute;
+  left:-10%;
+  top:130%;
+  height: 60%;
+  width: 30%;
+}
+.a2 {
+  position:absolute;
+  right:-2%;
+  top:200%;
+  height: 30%;
+  width: 50%;
+}
+
 
 body::before {
   content: "";

@@ -57,7 +57,7 @@
 
     <section id="main">
 
-        <form action="" id="searchform" >
+        <form action="" id="searchform">
             <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
             <button type="submit"><svg viewBox="0 0 1024 1024">
                     <path class="path1"
@@ -67,7 +67,7 @@
         </form>
 
 
-        <div id="accueil" >
+        <div id="accueil">
             <div>
                 <ul class="cards">
                     <li>
@@ -593,7 +593,7 @@
                 </a>
                 <ul class="cards">
                     <li>
-                        <a onclick="ret('quiz1')"  class="card quiz" style="background-color:#E65C5C;">
+                        <a onclick="ret('quiz1')" class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <div class="card__header-text">
@@ -605,10 +605,10 @@
                         </a>
                     </li>
                     <li>
-                        <a onclick="ret('quiz1')"class="card quiz" style="background-color:#E65C5C;">
+                        <a onclick="ret('quiz1')" class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
-                                    
+
                                     <div class="card__header-text">
                                         <h3 class="card__title">Quiz 02</h3>
                                     </div>
@@ -621,7 +621,7 @@
                         <a href="" class="card quiz" style="background-color:#E65C5C;">
                             <div class="card__overlay">
                                 <div class="card__header">
-                                    
+
                                     <div class="card__header-text">
                                         <h3 class="card__title">Quiz 03</h3>
                                     </div>
@@ -638,36 +638,115 @@
         </div>
 
         <div id="quiz1" class="display_non">
-            <div  class="card_quiz ">
-                Qestion n°01 :
-                     <h2>L'angor :</h2>
-                     <div class="choix">
-                         <input type="radio" name="choix" id="q1">
-                         <label for="q1">est synonime de coronarite et d'angine de poitrine</label>
-                     </div>
-                     <div class="choix">
-                         <input type="radio" name="choix" id="q2">
-                         <label for="q2">ne servient qu'à l'effort </label>
-                     </div>
-                     <div class="choix">
-                         <input type="radio" name="choix" id="q3">
-                         <label for="q3">et du à une obstruction des artères coronaires</label>
-                     </div>
-                     <div class="choix">
-                         <input type="radio" name="choix" id="q4">
-                         <label for="q4">est synonime de coronarite et d'angine de poitrine</label>
-                     </div>
-                     
-                     <button class="btn_n suiv">Suivant</button>
-                     <button class="btn_n prec">Precedent</button>
-                
-         </div>
+            <div class="card_quiz ">
+                <fieldset>
+                    Qestion n°01 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q1">
+                        <label for="q1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q2">
+                        <label for="q2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q3">
+                        <label for="q3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q4">
+                        <label for="q4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv next">Suivant</button>
+                </fieldset>
+                <fieldset style="display:none">
+                    Qestion n°02 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq1">
+                        <label for="bq1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq2">
+                        <label for="bq2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq3">
+                        <label for="bq3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq4">
+                        <label for="bq4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv next">Suivant</button>
+                    <button class="btn_n prec prev">Precedent</button>
+                </fieldset>
+                <fieldset style="display:none">
+                    Qestion n°03 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq1">
+                        <label for="cq1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq2">
+                        <label for="cq2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq3">
+                        <label for="cq3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq4">
+                        <label for="cq4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv">Envoyer</button>
+                    <button class="btn_n  prev">Precedent</button>
+                </fieldset>
+
+
+
+            </div>
         </div>
-        
+
 
 
 
         <script src="\ProjetWeb\js\script.js"></script>
+        <script src="jquery-3.6.0.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+
+                var current_step, next_step, previous_step;
+                var current = 1;
+                var steps = $("fieldset").length;
+
+                $(".next").click(function () {
+                    current_step = $(this).parent();
+                    next_step = $(this).parent().next();
+                    next_step.show();
+                    current_step.hide()
+                    current++;
+                });
+
+                $(".prev").click(function () {
+
+                    current_step = $(this).parent();
+                    previous_step = $(this).parent().prev();
+                    previous_step.show();
+                    current_step.hide();
+                    current--;
+
+                });
+
+                
+            });
+        </script>
 </body>
 
 </html>
