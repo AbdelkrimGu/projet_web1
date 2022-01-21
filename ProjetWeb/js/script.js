@@ -63,14 +63,14 @@ dark.addEventListener('click', function () {
         bod.setProperty('--side-color', "#202d3f");
         bod.setProperty('--premiere-color', "#fff");
         bod.setProperty('--seconde-color', "#202d3f");
-        document.getElementById("logo_img").src="../ProjetWeb/ressource/lo.png";
+        document.getElementById("logo_img").src = "../ProjetWeb/ressource/lo.png";
     }
     else {
         bod.setProperty('--main-color', "rgb(248, 247, 247)");
         bod.setProperty('--side-color', "#E9EDF3");
         bod.setProperty('--premiere-color', "#202d3f");
         bod.setProperty('--seconde-color', "#fff");
-        document.getElementById("logo_img").src="../ProjetWeb/ressource/lo.png";
+        document.getElementById("logo_img").src = "../ProjetWeb/ressource/lo.png";
     }
 })
 
@@ -88,11 +88,30 @@ function ret(e) {
 
 
 // enlever search bar
-var quizz=document.getElementsByClassName("quiz");
-for(var i=0;i<quizz.length;i++) {
-    quizz[i].addEventListener("click",function(){
-        document.getElementById("searchform").style.display="none";
+var quizz = document.getElementsByClassName("quiz");
+for (var i = 0; i < quizz.length; i++) {
+    quizz[i].addEventListener("click", function () {
+        document.getElementById("searchform").style.display = "none";
     })
 }
 
 // end
+
+//slide
+var current_step, next_step, previous_step;
+
+$(".next").click(function () {
+    current_step = $(this).parent();
+    next_step = $(this).parent().next();
+    next_step.show();
+    current_step.hide()
+});
+
+$(".prev").click(function () {
+    current_step = $(this).parent();
+    previous_step = $(this).parent().prev();
+    previous_step.show();
+    current_step.hide();
+});
+    //end
+

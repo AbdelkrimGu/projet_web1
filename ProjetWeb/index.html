@@ -715,38 +715,9 @@
 
 
 
-
-        <script src="\ProjetWeb\js\script.js"></script>
         <script src="jquery-3.6.0.min.js"></script>
+        <script src="\ProjetWeb\js\script.js"></script>
 
-        <script>
-            $(document).ready(function () {
-
-                var current_step, next_step, previous_step;
-                var current = 1;
-                var steps = $("fieldset").length;
-
-                $(".next").click(function () {
-                    current_step = $(this).parent();
-                    next_step = $(this).parent().next();
-                    next_step.show();
-                    current_step.hide()
-                    current++;
-                });
-
-                $(".prev").click(function () {
-
-                    current_step = $(this).parent();
-                    previous_step = $(this).parent().prev();
-                    previous_step.show();
-                    current_step.hide();
-                    current--;
-
-                });
-
-                
-            });
-        </script>
 </body>
 
 </html>
