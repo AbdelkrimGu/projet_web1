@@ -1,9 +1,8 @@
 :root {
   --main-color: rgb(248, 247, 247);
-  --side-color: #ddd;
-  --premiere-color: #064663;
+  --side-color: #e9edf3;
+  --premiere-color: #202d3f;
   --seconde-color: #fff;
-  
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -12,15 +11,14 @@
   background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-  background:  var(--premiere-color);
+  background: var(--premiere-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #30b38f;
+  background: #949494;
 }
 
 * {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Heebo", sans-serif;
 }
 body {
   margin: 0;
@@ -32,9 +30,7 @@ body {
 
 header {
   margin: 0;
-  background-color: #064663;
-  /* background: linear-gradient(to right, #296994, #3282b8); */
-
+  background-color: #202d3f;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,13 +41,17 @@ header {
   z-index: 10;
 }
 
+fieldset{
+
+  border: none;
+}
 #about {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-#about img {
+#log img {
   width: 100%;
   max-width: 200px;
   height: 100%;
@@ -80,13 +80,11 @@ header {
 }
 
 header ul li {
-  /* padding: 0 7px; */
   list-style-type: none;
   cursor: pointer;
 }
 
 #subscription ul {
-  margin-right: 3rem;
   display: grid;
   grid-template-columns: repeat(2, auto);
   gap: 1.5rem;
@@ -110,6 +108,7 @@ aside {
   top: 80px;
   overflow: auto;
   transition: width 0.3s;
+  overflow-y: hidden;
 }
 
 .show-sidebar {
@@ -117,6 +116,9 @@ aside {
   display: none !important;
 }
 
+.show-margin {
+  margin-left: 0px;
+}
 
 aside a {
   vertical-align: middle;
@@ -125,6 +127,18 @@ aside a {
   padding: 16px;
   text-decoration: none;
   outline: none;
+}
+
+aside a {
+  vertical-align: middle;
+  display: flex;
+  color: var(--premiere-color);
+  padding: 16px;
+  text-decoration: none;
+  outline: none;
+}
+aside a:last-child {
+  margin: 50px 0 50px 0;
 }
 
 aside a.active {
@@ -139,12 +153,17 @@ aside a:hover:not(.active) {
   background-color: #3282b863;
   color: var(--seconde-color);
 }
+aside a:last-child:hover {
+  background-color: transparent;
+  color: var(--seconde-color);
+}
 
 aside > div {
   height: 50px;
 }
 .dark_text {
   color: var(--premiere-color);
+  padding-left: 10px;
 }
 
 .icons {
@@ -155,6 +174,11 @@ aside > div {
   text-align: center;
   margin: 0 10px 0 0;
 }
+.icons_user {
+  display: block !important;
+  font-size: 20px;
+  text-align: center;
+}
 .icons_card {
   vertical-align: middle;
   color: var(--premiere-color);
@@ -162,9 +186,21 @@ aside > div {
   width: 30px;
   text-align: center;
 }
+.icons_retour {
+  font-size: 30px;
+  color: var(--premiere-color);
+  margin-left: 2%;
+}
+
 section {
   transition: margin-left 0.5s;
   margin: 150px 0px 0px 200px;
+}
+section p {
+  color: gray;
+  position: relative;
+  text-align: center;
+  top: 100px;
 }
 
 .inputs {
@@ -200,12 +236,11 @@ form {
   flex-direction: row;
   align-items: center;
   margin: auto;
-  
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin: 4rem 5vw;
   padding: 0;
@@ -221,21 +256,20 @@ form {
   text-decoration: none;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .card__image {
   width: 100%;
   height: auto;
-  -webkit-filter: blur(1px);
-  filter: blur(1px);
 }
 .card__image_med {
   width: 100%;
-  height:75%;
+  height: 75%;
 }
 .card__image_inf {
   width: 100%;
-  height:90%;
+  height: 90%;
 }
 .card__overlay {
   position: absolute;
@@ -328,14 +362,19 @@ form {
   .list {
     display: none !important;
   }
+  /* body {
+    overflow-y: hidden;
+  } */
   #about {
-    width: 66.7% !important;
     display: grid;
     grid-template-columns: repeat(2, auto);
-    gap: 7%;
+    gap: 15%;
   }
-  #about img {
-    margin-left: 10%;
+  #log {
+    width: 45%;
+  }
+  #subscription {
+    display: none;
   }
 
   aside {
@@ -345,6 +384,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto;
   }
   aside a {
     display: flex;
@@ -360,6 +400,7 @@ form {
   .dropdown {
     display: block !important;
     margin-right: 2%;
+    gap: 7%;
   }
 
   .dropdown .dropbtn {
@@ -415,19 +456,11 @@ form {
 .switch {
   position: relative;
   display: inline-block;
-
   width: 40px;
   height: 25px;
   bottom: 0;
 }
-.dark_mode_button {
-  text-align: center;
-  height: 50px;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  padding-bottom: 5em;
-}
+
 .slider {
   position: absolute;
   cursor: pointer;
@@ -466,4 +499,95 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.display_non {
+  display: none;
+}
+
+.card_quiz {
+  color: var(--seconde-color);
+  margin: auto;
+  margin-top: 40px;
+  width: 40%;
+  background-color: var(--premiere-color);
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.btn_n {
+  position: relative;
+  margin: 30px 10px 0 0;
+  border-radius: 5px;
+  padding: 5px 20px;
+  background-color: var(--seconde-color);
+  border: 1 px solid var(--seconde-color);
+  font-size: 15px;
+  text-transform: uppercase;
+  color: var(--premiere-color);
+  cursor: pointer;
+}
+.btn_n:hover {
+  box-shadow: 0 0 20px rgba(10, 10, 10, 0.2);
+}
+.suiv {
+  float: right;
+}
+.prec {
+  float: left;
+}
+.choix {
+  padding: 2px 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.choix input + label {
+  display: inline;
+  color: var(--seconde-color);
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  padding-left: 24px;
+  margin: 5px 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.choix input {
+  margin: 0 4px 0 0;
+  line-height: normal;
+  size: 12px;
+  display: none;
+}
+.choix input + label:before,
+.choix input + label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  color: white;
+  font-family: Times;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.choix input + label:before {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 0.1em #ddd, inset 0 0 0 1em white;
+}
+.choix input + label:hover:before {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 0.3em white, inset 0 0 0 1em #c6c6c6;
+}
+.choix input:checked + label:before {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em #064663;
 }

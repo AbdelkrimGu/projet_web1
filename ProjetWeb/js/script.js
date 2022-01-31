@@ -49,15 +49,7 @@ var sidebar = document.getElementById("sidebar");
 
 menu.addEventListener('click', function () {
     sidebar.classList.toggle("show-sidebar");
-
-    if (sideb.style.width == "0px") {
-        sideb.style.width = "200px";
-        main.style.marginLeft = "200px";
-    }
-    else {
-        sideb.style.width = "0";
-        main.style.marginLeft = "0px";
-    };
+    main.classList.toggle("show-margin");
 
 });
 
@@ -68,16 +60,58 @@ dark.addEventListener('click', function () {
     var bod = document.querySelector("body").style;
     if (dark.checked) {
         bod.setProperty('--main-color', "#1B262C");
-        bod.setProperty('--side-color', "#064663");
+        bod.setProperty('--side-color', "#202d3f");
         bod.setProperty('--premiere-color', "#fff");
-        bod.setProperty('--seconde-color', "#064663");
+        bod.setProperty('--seconde-color', "#202d3f");
+        document.getElementById("logo_img").src = "../ProjetWeb/ressource/lo.png";
     }
     else {
         bod.setProperty('--main-color', "rgb(248, 247, 247)");
-        bod.setProperty('--side-color', "#ddd");
-        bod.setProperty('--premiere-color', "#064663");
+        bod.setProperty('--side-color', "#E9EDF3");
+        bod.setProperty('--premiere-color', "#202d3f");
         bod.setProperty('--seconde-color', "#fff");
+        document.getElementById("logo_img").src = "../ProjetWeb/ressource/lo.png";
     }
 })
 
 // end
+
+
+function ret(e) {
+    var all_div = document.querySelectorAll("section > div");
+    for (var i = 0; i < all_div.length; i++) {
+        all_div[i].style.display = "none";
+    }
+    var a = document.getElementById(e)
+    a.style.display = "block"
+}
+
+
+// enlever search bar
+var quizz = document.getElementsByClassName("quiz");
+for (var i = 0; i < quizz.length; i++) {
+    quizz[i].addEventListener("click", function () {
+        document.getElementById("searchform").style.display = "none";
+    })
+}
+
+// end
+
+//slide
+var current_step, next_step, previous_step;
+
+$(".next").click(function () {
+    current_step = $(this).parent();
+    next_step = $(this).parent().next();
+    next_step.show();
+    current_step.hide()
+});
+
+$(".prev").click(function () {
+    current_step = $(this).parent();
+    previous_step = $(this).parent().prev();
+    previous_step.show();
+    current_step.hide();
+});
+    //end
+

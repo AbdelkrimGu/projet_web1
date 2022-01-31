@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="\ProjetWeb\css\style1.css">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c3e887da68.js" crossorigin="anonymous"></script>
 
     <title>Quiz</title>
@@ -15,29 +16,22 @@
     <header>
         <div id="about">
             <button id="burger">&#9776;</button>
-            <img src="ressource\logo.png" alt="LogoHere">
-            <ul class="list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+
         </div>
-
-
+        <div id="log">
+            <img id="logo_img" src="ressource\lo.png" alt="LogoHere">
+        </div>
         <div id="subscription">
             <ul class="list">
-                <li><a href="#">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <li><a href="\ProjetWeb\login.html"><i class="fa-solid fa-user icons_user"></i>Account</a></li>
             </ul>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">Account
-                <i class="fa fa-caret-down"></i>
-            </button>
+            <button class="dropbtn" onclick="myFunction()"><i class="fa-solid fa-user icons_user"></i>Account</button>
             <div class="dropdown-content" id="myDropdown">
                 <a href="#">Log In</a>
                 <a href="#">Sign Up</a>
-                <a href="#">Contact</a>
-                <a href="#">About</a>
+
             </div>
         </div>
     </header>
@@ -52,18 +46,18 @@
         <a class=" btn" href="#" onclick="ret('architecture')"><i
                 class="fas fa-ruler-combined icons"></i>Architecture</a>
 
-        <div class=dark_mode_button>
+        <a>
             <label class="switch">
                 <input id="darkm" type="checkbox">
                 <span class="slider round"></span>
             </label>
             <label class="dark_text">Dark mode</label>
-        </div>
+        </a>
     </aside>
 
     <section id="main">
 
-        <form action="">
+        <form action="" id="searchform">
             <input class="inputs" type="search" id="search" placeholder="Search..." autocomplete="off">
             <button type="submit"><svg viewBox="0 0 1024 1024">
                     <path class="path1"
@@ -175,11 +169,16 @@
             </div>
 
         </div>
-        <div id="medecine" style="display: none;">
+        <!-- Specialités -->
+        <div id="medecine" class="display_non">
+
             <div>
+                <a onclick="ret('accueil')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
                 <ul class="cards">
                     <li>
-                        <a href="" class="card">
+                        <a onclick="ret('cardiologie')" class="card">
                             <img src="ressource\medecine\cardio.png" class="card__image_med" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
@@ -295,12 +294,15 @@
             </div>
 
         </div>
-        <div id="informatique" style="display: none;">
+        <div id="informatique" class="display_non">
             <div>
+                <a onclick="ret('accueil')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
                 <ul class="cards">
                     <li>
                         <a href="" class="card">
-                            <img src="ressource\informatique\data.PNG" class="card__image_inf" alt="" />
+                            <img src="ressource\informatique\data-base.png" class="card__image" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +357,7 @@
                             </div>
                         </a>
                     </li>
-                   
+
                     <li>
                         <a href="" class="card">
                             <img src="ressource\informatique\archi.PNG" class="card__image_inf" alt="" />
@@ -399,18 +401,21 @@
             </div>
 
         </div>
-        <div id="biologie" style="display: none;">
+        <div id="biologie" class="display_non">
             <div>
+                <a onclick="ret('accueil')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
                 <ul class="cards">
                     <li>
                         <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\biologie\dna.PNG" class="card__image" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
                                     </svg>
-
-                                    <i class="fa-solid fa-database icons_card"></i>
+                                    <i class="fa-solid fa-dna icons_card"></i>
                                     <div class="card__header-text">
                                         <h3 class="card__title">Biologie moléculaire</h3>
                                         <span class="card__status">1 quiz</span>
@@ -420,15 +425,35 @@
                             </div>
                         </a>
                     </li>
+
                     <li>
                         <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\biologie\atom.png" class="card__image" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
                                     </svg>
-                                    <i class="fa-solid fa-sitemap icons_card"></i>
+                                    <i class="fa-solid fa-atom icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Biophysique</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\biologie\plants.png" class="card__image" alt="" />
 
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-seedling icons_card"></i>
                                     <div class="card__header-text">
                                         <h3 class="card__title">Ecologie</h3>
                                         <span class="card__status">1 quiz</span>
@@ -440,13 +465,13 @@
                     </li>
                     <li>
                         <a href="" class="card">
-
+                            <img src="\ProjetWeb\ressource\biologie\vials.PNG" class="card__image" alt="" />
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
                                     </svg>
-                                    <i class="fa-solid fa-code icons_card"></i>
+                                    <i class="fa-solid fa-vial icons_card"></i>
                                     <div class="card__header-text">
                                         <h3 class="card__title">Biochemie structurale</h3>
                                         <span class="card__status">2 quiz</span>
@@ -457,17 +482,87 @@
                             </div>
                         </a>
                     </li>
+
+
+
+                </ul>
+            </div>
+
+        </div>
+        <div id="pharmacie" class="display_non">
+            <div>
+                <a onclick="ret('accueil')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
+                <ul class="cards">
                     <li>
                         <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\pharmacie\pills.png" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-capsules icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Pharmacie galénique</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\pharmacie\medic.png" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-prescription-bottle icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">pharmacologie</h3>
+                                        <span class="card__status">1 quiz</span>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\pharmacie\vial.png" class="card__image" alt="" />
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
+                                        <path />
+                                    </svg>
+                                    <i class="fa-solid fa-flask icons_card"></i>
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Chimie pharmaceutique</h3>
+                                        <span class="card__status">2 quiz</span>
+
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card">
+                            <img src="\ProjetWeb\ressource\pharmacie\micros.png" class="card__image" alt="" />
 
                             <div class="card__overlay">
                                 <div class="card__header">
                                     <svg class="card__arc" xmlns="http://www.w3.org/2000/svg">
                                         <path />
                                     </svg>
-                                    <i class="fa-solid fa-microchip icons_card"></i>
+                                    <i class="fa-solid fa-bong icons_card"></i>
                                     <div class="card__header-text">
-                                        <h3 class="card__title">Biophysique</h3>
+                                        <h3 class="card__title">Chimie analytique</h3>
                                         <span class="card__status">1 quiz</span>
                                     </div>
                                 </div>
@@ -480,26 +575,149 @@
             </div>
 
         </div>
-    </section>
+        <div id="architecture" class="display_non">
+            <div>
+                <a onclick="ret('accueil')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
+                <p>Désole y'a pas de quiz disponible pour le moment pour cette spécialité</p>
+            </div>
+
+        </div>
+        <!-- End -->
+
+        <div id="cardiologie" class="display_non">
+            <div>
+                <a onclick="ret('medecine')">
+                    <i class="fa-solid fa-circle-arrow-left icons_retour"></i>
+                </a>
+                <ul class="cards">
+                    <li>
+                        <a onclick="ret('quiz1')" class="card quiz" style="background-color:#E65C5C;">
+                            <div class="card__overlay">
+                                <div class="card__header">
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Quiz 01</h3>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a onclick="ret('quiz1')" class="card quiz" style="background-color:#E65C5C;">
+                            <div class="card__overlay">
+                                <div class="card__header">
+
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Quiz 02</h3>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="card quiz" style="background-color:#E65C5C;">
+                            <div class="card__overlay">
+                                <div class="card__header">
+
+                                    <div class="card__header-text">
+                                        <h3 class="card__title">Quiz 03</h3>
+                                    </div>
+                                </div>
+                                <button class="card_btn">Commencer</button>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div id="quiz1" class="display_non">
+            <div class="card_quiz ">
+                <fieldset>
+                    Qestion n°01 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q1">
+                        <label for="q1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q2">
+                        <label for="q2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q3">
+                        <label for="q3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix" id="q4">
+                        <label for="q4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv next">Suivant</button>
+                </fieldset>
+                <fieldset style="display:none">
+                    Qestion n°02 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq1">
+                        <label for="bq1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq2">
+                        <label for="bq2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq3">
+                        <label for="bq3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix1" id="bq4">
+                        <label for="bq4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv next">Suivant</button>
+                    <button class="btn_n prec prev">Precedent</button>
+                </fieldset>
+                <fieldset style="display:none">
+                    Qestion n°03 :
+                    <h2>L'angor :</h2>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq1">
+                        <label for="cq1">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq2">
+                        <label for="cq2">ne servient qu'à l'effort </label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq3">
+                        <label for="cq3">et du à une obstruction des artères coronaires</label>
+                    </div>
+                    <div class="choix">
+                        <input type="radio" name="choix2" id="cq4">
+                        <label for="cq4">est synonime de coronarite et d'angine de poitrine</label>
+                    </div>
+
+                    <button class="btn_n suiv">Envoyer</button>
+                    <button class="btn_n  prev">Precedent</button>
+                </fieldset>
 
 
-    <script>
-        function ret(e) {
-            var all_div = document.querySelectorAll("section > div");
-            for (var i = 0; i < all_div.length; i++) {
-                all_div[i].style.display = "none";
-            }
-            var a = document.getElementById(e)
-            a.style.display = "block"
+
+            </div>
+        </div>
 
 
-        }
 
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="\ProjetWeb\js\script.js"></script>
 
-    </script>
-
-
-    <script src="\ProjetWeb\js\script.js"></script>
 </body>
 
 </html>
